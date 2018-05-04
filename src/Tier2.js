@@ -8,7 +8,8 @@ export default class Tier2 extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      childColor: getReducedColor(this.props.color),
+      dadColor: props.color,
+      childColor: getReducedColor(dadColor),
     }
   }
 
@@ -16,7 +17,7 @@ export default class Tier2 extends Component {
     // hard coded color values have been added below, though they won't be
     // present in our solution. What should they be replaced with?
     return (
-      <div className="tier2" style={{backgroundColor: this.props.color, color: this.props.color}}>
+      <div className="tier2" style={{backgroundColor: this.props.color, color: this.state.dadColor}>
         <Tier3 color={this.state.childColor} />
         <Tier3 color={this.state.childColor} />
       </div>
